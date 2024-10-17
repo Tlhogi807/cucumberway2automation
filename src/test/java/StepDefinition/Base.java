@@ -9,26 +9,26 @@ import org.testng.annotations.Test;
 public class Base {
     static WebDriver driver;
 
-    public static WebDriver startBrowser(String browserChoice,String url) {
+    public static WebDriver startBrowser(String browserChoice, String url) {
 
         switch (browserChoice.toLowerCase()) {
             case "chrome":
                 driver = new ChromeDriver();
                 break;
-            case  "firefox":
+            case "firefox":
             case "mozila":
-                driver= new FirefoxDriver();
+                driver = new FirefoxDriver();
             default:
-                driver= new EdgeDriver();
+                driver = new EdgeDriver();
         }
         driver.get(url);
         driver.manage().window().maximize();
-        return  driver;
+        return driver;
     }
 
     @Test
-    public void test(){
-
+    public void test() {
+        startBrowser("chrome", "http://www.way2automation.com/angularjs-protractor/banking/#/login");
 
     }
 
