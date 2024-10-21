@@ -7,28 +7,24 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class BrowserFactory {
-   static WebDriver driver;
+    static WebDriver driver;
 
     public static WebDriver startBrowser(String browserChoice, String url) {
 
-        switch (browserChoice.toLowerCase()){
+        switch (browserChoice.toLowerCase()) {
             case "chrome":
-                driver= new ChromeDriver();
+                driver = new ChromeDriver();
                 break;
             case "firefox":
             case "mozila":
-                driver=new FirefoxDriver();
+                driver = new FirefoxDriver();
             default:
-                driver= new EdgeDriver();
+                driver = new EdgeDriver();
         }
         driver.get(url);
         driver.manage().window().maximize();
-        return  driver;
+        return driver;
     }
 
-//@Test
-//public void test(){
-  //  startBrowser("mozila", "http://www.way2automation.com/angularjs-protractor/banking/#/login");
-
-}
+  }
 
